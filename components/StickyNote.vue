@@ -17,9 +17,25 @@ const props = defineProps({
     type: String,
     default: '180px',
   },
+  height: {
+    type: String, // New height prop
+    default: 'auto', // Default to auto height
+  },
   title: {
     type: String,
     default: '',
+  },
+  rotate: {
+    type: Number, // Rotation angle in degrees
+    default: 0,
+  },
+  positionX: {
+    type: String, // Horizontal position (e.g., '10px', '50%', 'right')
+    default: '0px',
+  },
+  positionY: {
+    type: String, // Vertical position (e.g., '10px', '50%', 'top')
+    default: '0px',
   },
 })
 
@@ -37,6 +53,11 @@ const stickyStyles = computed(() => ({
   '--text-color': 'var(--custom-sticky-text-color)',
   '--text-align': props.textAlign,
   '--width': props.width,
+  '--height': props.height, // Apply height dynamically
+  transform: `rotate(${props.rotate}deg)`, // Apply rotation
+  position: 'absolute', // Make the sticky note positionable
+  left: props.positionX, // Horizontal position
+  top: props.positionY, // Vertical position
 }))
 </script>
 
@@ -52,7 +73,7 @@ const stickyStyles = computed(() => ({
 <style scoped>
 .sticky-note {
   width: var(--width);
-  height: var(--width);
+  height: var(--height); /* Use dynamic height */
   background-color: var(--sticky-color, yellow);
   text-align: var(--text-align, left);
   max-width: 100%;
@@ -63,6 +84,7 @@ const stickyStyles = computed(() => ({
   font-size: 0.8rem;
   color: var(--text-color);
   border: 0.4px solid var(--border-color);
+  transition: transform 0.3s ease; /* Smooth rotation */
 }
 .sticky-note strong {
   display: block;

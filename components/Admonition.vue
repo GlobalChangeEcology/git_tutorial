@@ -16,6 +16,10 @@ const props = defineProps({
     type: String,
     default: '100%',
   },
+  rotate: {
+    type: Number, // Rotation angle in degrees
+    default: 0,
+  },
 })
 
 const admontype = computed(() => {
@@ -56,7 +60,10 @@ const admontype = computed(() => {
 </script>
 
 <template>
-  <div :class="admontype.class" :style="{ width: width }">
+  <div
+    :class="admontype.class"
+    :style="{ width: width, transform: `rotate(${rotate}deg)` }"
+  >
     <div class="admonition-header">
       <Icon :icon="admontype.icon" class="admonition-icon" />
       <strong>{{ admontype.title }}</strong>
@@ -71,6 +78,7 @@ const admontype = computed(() => {
   padding: 1rem;
   margin: 1rem 0;
   border-radius: 4px;
+  transition: transform 0.3s ease; /* Smooth rotation */
 }
 .admonition-header {
   display: flex;

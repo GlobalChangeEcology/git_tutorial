@@ -52,15 +52,15 @@ transition: fade-out
 ---
 
 
-## Why use Git?
+## Why use Git/Github?
 
 Reproducibility, teamwork, and fearless coding
 
-1. <span v-click>🔁 Track Your Changes Over Time</span>
-2. <span v-click>🧑‍🤝‍🧑 Collaborate Smoothly with Others</span>
-3. <span v-click>💾 Backup Your Work Automatically (with GitHub)</span>
-4. <span v-click>🔬 Promote Reproducibility in Research</span>
-5. <span v-click>📢 Share Your Work with the World (if you want)</span>
+1. <span v-click>🔁 **Track Changes**: See what changed and when.</span>
+2. <span v-click>🧑‍🤝‍🧑 **Collaborate**: Work with others seamlessly.</span>
+3. <span v-click>💾 **Backup**: Save your work automatically (with GitHub)</span>
+4. <span v-click>🔬 **Reproducibility**: Ensure your research can be repeated.</span>
+5. <span v-click>📢  **Share**: Publish your work with the world.</span>
 
 
 ---
@@ -190,36 +190,12 @@ transition: fade-out
 # Git Basics
 
 ---
-layout: two-cols
 transition: fade-out
 ---
 
+## Basic Concept
 
-::left::
-
-### How it works
-
-A high-level look at Git's local-to-remote flow
-
-<div style="display: flex; height: 100%;">
-
-```bash {all|1-2|1-3|1-4|1-7|1-8}
-
-# Local Computer
-git add <file>           # Stage a file
-git commit -m "msg"      # Save staged changes
-git checkout <branch>    # Switch branch
-
-# Github
-git push origin main     # Upload local commits to remote
-git pull origin main     # Fetch and merge changes from remote 
-```
-
-</div>
-
-::right::
-
-<div style="display: flex; justify-content: center; align-items: center; margin-top: -3em; margin-bottom: 1em; transform: scale(0.85);">
+<div style="display: flex; justify-content: center; align-items: center; margin-top: -3em; margin-top: 1em; transform: scale(0.85);">
 
 ```mermaid
 flowchart TD
@@ -240,78 +216,71 @@ flowchart TD
     LOCAL -->|git checkout| WD
 
 ```
-  </div>
-
+</div>
 
 
 ---
 transition: fade-out
 ---
 
-## Core Concepts
+## Git Initialization
 
-Learn the Git language: repo, commit, branch, and more
-
-<CustomTable
-  :headers="['Term', 'Meaning']"
-  :rows="[
-    ['📁 Repo', 'A project folder tracked by Git'],
-    ['💾 Commit', 'A saved snapshot of your project’s state'],
-    ['🌿 Branch', 'A parallel line of development'],
-    ['🔀 Merge', 'Combining changes from one branch into another'],
-    ['🌐 Remote', 'A version of your repo hosted on GitHub']
-  ]"
-  :striped="true"
-  :bordered="true"
-  fontSize="0.8rem"
-  headerBgColor="#f5f5f5"
-  headerTextColor="#000"
-  :rowColors="{ odd: '#fff', even: '#f9f9f9' }"
-  rowHoverColor="#e0e0e0"
-/>
-
----
-transition: fade-out
----
-
-## Git Workflow 
-
-Step-by-step to set up and save your work
+Set up your Git environment
 
 ```bash
 # Step 1: Set your user info (only once)
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 
-# Step 2: Initialize a new repo
+# Step 2: Initialize a new repository
 git init my-project
 cd my-project
+```
 
+---
+transition: fade-out
+---
+
+## Git Add & Commit
+
+Track and save your work
+
+```bash
 # Step 3: Create a file
-echo "Hello Git!" > readme.md
+echo "Hello Git!" > README.md
 
 # Step 4: Track the file
-git add readme.md
+git add README.md
 
 # Step 5: Save a snapshot
 git commit -m "Initial commit"
+
 ```
 
+<v-click> <StickyNote title="Pro Tip" color="green-light"  width='280px' :positionX="'60%'" :positionY="'55%'" :rotate="10"> Always write meaningful commit messages to describe what you’ve changed and why. </StickyNote> </v-click>
 
 ---
 transition: fade-out
 ---
 
 ## Push to GitHub
+Connect your local repo to the cloud
 
-### Connect your local repo to the cloud
+#### Step 1: Create a GitHub Account
 
+- If you don’t already have a GitHub account, [sign up here](https://github.com/signup).
+- Once signed in, create your repository.
+
+
+<v-click>
+
+#### Step 2: Connect your local repo to the cloud
 ```bash
 git remote add origin https://github.com/yourusername/your-repo.git # Add the remote (replace with your repo URL)
-git branch -M main. # Set the default branch
-git push -u origin main # Push your commits
+git branch -M main             # Set the default branch
+git push -u origin main        # Push your commits
 ```
-<br></br>
+</v-click>
 
 ---
 transition: fade-out
@@ -319,7 +288,7 @@ transition: fade-out
 
 ## Branching & Merging
 
-### Parallel development made easy
+Parallel development made easy.
 
 ```bash
 # Create and switch to a new branch
@@ -328,49 +297,66 @@ git checkout -b feature-idea
 # Work on your changes, then:
 git add .
 git commit -m "Add awesome feature"
-git push origin feature-idea
+
+# Merge your branch into main
+git checkout main
+git merge feature-idea
 ```
+<v-click> <StickyNote title="Pro Tip" color="green-light"  width='280px' :positionX="'60%'" :positionY="'55%'" :rotate="10"> Use `git branch -d [branch]` to delete branches you no longer need and keep your repo clean. </StickyNote> </v-click>
 
 ---
 transition: fade-out
 ---
 
-## Branching & Merging
+### Git Stash
 
-### Parallel development made easy
+Save changes without committing.
 
 ```bash
-# Create and switch to a new branch
-git checkout -b feature-idea
-
-# Work on your changes, then:
-git add .
-git commit -m "Add awesome feature"
-git push origin feature-idea
+git stash             # Temporarily saves uncommitted changes
+git stash list        # See all stashed changes
+git stash apply       # Apply the most recent stash
+git stash pop         # Apply & remove the stash
+git stash drop        # Delete a stash
 ```
 
----
-layout: section
-transition: fade-out
----
+<v-click> <StickyNote title="Info" color="blue-light"  width='280px' :positionX="'60%'" :positionY="'40%'" :rotate="10">Git Stash helps you pause work, switch tasks, and keep your workspace clean without committing changes. </StickyNote> </v-click>
 
-# Advanced Git
 
 ---
-transition: fade-out
+transition: fade
 ---
 
-## git stash
+## Git Rebase
 
-### Save changes without committing
+ Rewrite your commit history
 
 ```bash
-git stash             # temporarily saves uncommitted changes
-git stash list        # see all stashed changes
-git stash apply       # apply most recent stash
-git stash pop         # apply & remove stash
-git stash drop        # delete a stash
+# Rebase your branch onto main
+git checkout feature-branch
+git rebase main
+
+# Resolve conflicts if needed, then:
+git add <file>
+git rebase --continue
 ```
+
+---
+transition: fade
+---
+
+## Git Restore & Reset
+
+Don’t panic — how to fix Git mistakes.
+
+```bash
+git restore --staged <file>   # Undo git add
+git reset --soft HEAD~1       # Undo last commit (keep changes)
+git reset --hard HEAD~1       # Undo last commit (discard changes)
+git checkout HEAD -- <file>   # Restore deleted file
+```
+
+<v-click> <StickyNote title="Warning" color="red-light"  width='280px' :positionX="'60%'" :positionY="'40%'" :rotate="10">  Use `git diff` before resetting to see what changes you’re about to discard </StickyNote> </v-click>
 
 ---
 transition: fade
@@ -378,7 +364,7 @@ transition: fade
 
 ##  git log
 
-### view the commit history of a repository 
+View the commit history of a repository 
 
 ```bash
 git log --oneline --graph  ## add `--oneline` or `--graph` for visual clarity 
@@ -387,70 +373,34 @@ git blame my_script.py.    ## see who edited each line of a file
 
 
 ---
-transition: fade
----
-
-## git restore & reset
-
-### Don’t panic — how to fix Git mistakes
-
-```bash
-git restore --staged <file>   ## undo git add
-git reset --soft HEAD~1	      ## undo last commit (keep changes) 
-git reset --hard HEAD~1.      ## undo last commit (discard changes)
-git checkout HEAD -- <file>   ## restore deleted file
-
-```
-
----
-layout: cover
+layout: two-cols
 transition: fade-out
 ---
 
-# Additional Tips
+::left::  
 
----
-transition: fade-out
----
+##  GitHub Etiquette
+Collaborate with kindness and clarity
 
-## Common Git Mistakes & Fixes
+-  Write clear commit messages (what + why)
+-  Don’t commit broken code to **main**
+-  Use **.gitignore** to keep clutter out
+-  Clean up unused branches regularly
+-  Be kind and constructive in Pull Request comments
+-  Always write a description when opening a PR
 
-### Oops-proofing your workflow with simple commands
 
-<div style="font-size: 0.8em; max-width: 100%; margin: auto;">
-<table style="width: 100%; border-collapse: collapse;">
-  <thead style="background-color: #f5f5f5;">
-    <tr>
-      <th style="padding: 10px; border: 1px solid #ccc;">Mistake</th>
-      <th style="padding: 10px; border: 1px solid #ccc;">Fix</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 10px; border: 1px solid #ccc;">Forgot to add a file</td>
-      <td style="padding: 10px; border: 1px solid #ccc;"><code>git add &lt;file&gt;</code> + <code>git commit</code></td>
-    </tr>
-    <tr>
-      <td style="padding: 10px; border: 1px solid #ccc;">Committed to the wrong branch</td>
-      <td style="padding: 10px; border: 1px solid #ccc;"><code>git switch correct-branch</code> + <code>git cherry-pick &lt;commit&gt;</code></td>
-    </tr>
-    <tr>
-      <td style="padding: 10px; border: 1px solid #ccc;">Merge conflict!</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Manually edit → <code>git add</code> + <code>git commit</code></td>
-    </tr>
-    <tr>
-      <td style="padding: 10px; border: 1px solid #ccc;">Deleted important changes</td>
-      <td style="padding: 10px; border: 1px solid #ccc;"><code>git log</code> → find commit → <code>git checkout &lt;commit&gt; &lt;file&gt;</code></td>
-    </tr>
-    <tr>
-      <td style="padding: 10px; border: 1px solid #ccc;">Pushed sensitive data</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Use <a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG</a> or <code>git filter-branch</code></td>
-    </tr>
-  </tbody>
-</table>
-</div>
+::right::
 
-💡 Tip: Always check <code>git status</code> before committing!
+ <CustomImage
+  src="./assets/octocat.png"
+  alt="Octocat"
+  width="300px"
+  height="auto"
+  borderRadius="10px"
+  boxShadow="0px 4px 6px rgba(0, 0, 0, 0.1)"
+  alignment="center"
+/>
 
 ---
 transition: fade-out
@@ -458,31 +408,15 @@ transition: fade-out
 
 ## GitHub Desktop & GUI Tools
 
-### Prefer clicking to typing? No worries!
+Prefer clicking to typing? No worries!
 
-- **GitHub Desktop** – beginner-friendly official GUI
-- **VS Code** – Git integration built-in 
-- **GitKraken** – sleek UI, lots of power
-- **Sourcetree** – from Atlassian, great for teams
-
-💡 Choose the tool that fits *your* workflow.
-
----
-transition: fade-out
----
-
-##  GitHub Etiquette Tips
-
-### Collaborate with kindness and clarity
-
--  Write clear commit messages (what + why)
--  Don’t commit broken code to `main`
--  Use `.gitignore` to keep clutter out
--  Clean up unused branches regularly
--  Be kind and constructive in Pull Request comments
--  Always write a description when opening a PR
-
- "GitHub is not just a tool, it’s a shared workspace."
+- [**GitHub Desktop**](https://desktop.github.com/) – beginner-friendly official GUI
+- [**GitKraken**](https://www.gitkraken.com/) – sleek UI, lots of power
+- [**VS Code**](https://code.visualstudio.com/) – Git integration built-in 
+- [**RStudio**](https://posit.co/download/rstudio-desktop/) – Seamless Git integration for R projects
+- [**Sourcetree**](https://www.sourcetreeapp.com/) – Visual Git client by Atlassian
+- [**Tower**](https://www.git-tower.com/) – Intuitive Git client for macOS and Windows
+- [**JupyterLab Git**](https://github.com/jupyterlab/jupyterlab-git) – Git extension for JupyterLab
 
 
 ---
@@ -490,7 +424,7 @@ layout: center
 transition: fade-out
 ---
 
-# 🎉 You’re Ready to Git Going!
+ ## 🎉 You’re Ready to Git Going!
 ##
 
 “The best way to learn Git is to **use it regularly**"
@@ -499,3 +433,9 @@ transition: fade-out
 ✅ Ask questions, open issues  
 ✅ Collaborate early and often
 
+---
+layout: section
+transition: fade-out
+---
+
+# Git Practice Lab

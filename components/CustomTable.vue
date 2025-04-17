@@ -72,7 +72,7 @@ const props = defineProps({
   rowColors: {
     type: Object,
     default: () => ({
-      odd: '#fff',
+      odd: '#f9f9f9',
       even: '#f9f9f9',
     }), // Colors for odd and even rows
   },
