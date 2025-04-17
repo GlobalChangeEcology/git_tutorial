@@ -1,0 +1,200 @@
+:root {
+  --slidev-theme-primary: #1F2937; /* Dark gray (not changing value) */
+  --slidev-theme-secondary: #374151; /* Medium gray (not dark green) */
+  --slidev-theme-accent: #6BA368; /* Orange accent (not blue) */
+  --background-color: #F9FAFB; /* Light gray background */
+  
+  /* Add new color variables for more flexibility */
+  --text-color: #374151;
+  --muted-color: #7b818b;
+  --hover-color: #6BA368; /* Darker orange for hover states */
+  --border-color: #E5E7EB;
+  --custom-main-font: 'Inter', 'Roboto', 'Arial', sans-serif; /* Modern font */
+}
+
+#slide-container {
+  height: 100% !important;
+  background-color: var(--background-color); /* Light background for slides */
+}
+
+.slidev-layout {
+  font-family: var(--custom-main-font);
+  font-size: 16px;
+  color: var(--slidev-theme-primary);
+  line-height: 1.6;
+  background-color: var(--background-color);
+  padding: 1.5rem; /* Add padding for content */
+}
+
+/* Headings */
+h1 {
+  font-size: 3.5rem; /* Slightly larger for emphasis */
+  font-weight: 700; /* Bolder for stronger impact */
+  color: var(--slidev-theme-accent); /* Accent color */
+  text-align: left; /* Align left for consistency */
+  margin-bottom: 1.2rem; /* Adjust spacing below */
+  text-transform: uppercase; /* Keep uppercase for a professional look */
+  padding-bottom: 0.4rem; /* Reduce padding for better balance */
+  letter-spacing: 0.05em; /* Add slight letter spacing for readability */
+}
+
+h2 {
+  font-size: 2.8rem; /* Slightly larger for better hierarchy */
+  font-weight: 600; /* Semi-bold for distinction */
+  color: var(--slidev-theme-primary); /* Neutral dark gray */
+  text-align: left; /* Align left for consistency */
+  margin-bottom: 0.2rem;  /* Add spacing below */
+  letter-spacing: 0.03em; /* Subtle letter spacing */
+}
+
+h3 {
+  font-size: 2.2rem; /* Slightly larger for better readability */
+  font-weight: 500; /* Medium weight for balance */
+  color: var(--slidev-theme-secondary); /* Secondary color for contrast */
+  text-align: left; /* Align left for readability */
+  margin-top: 0; /* Remove extra spacing above h3 */
+  margin-bottom: 0.8rem; /* Keep spacing below h3 consistent */
+}
+
+h4 {
+  font-size: 1.9rem; /* Slightly larger for better visibility */
+  font-weight: 500; /* Medium weight for balance */
+  color: #4a5568; /* Neutral medium gray */
+  margin-bottom: 0.6rem; /* Add spacing below */
+  text-align: left; /* Align left for readability */
+  font-style: italic; /* Keep italic for differentiation */
+}
+
+/* Styling for h2 + p layout */
+h2 + p {
+  font-size: 1.1rem; /* Slightly smaller than h2 for hierarchy */
+  color: var(--muted-color, #4f545f); /* Muted color for contrast */
+  line-height: 1.8; /* Improve readability */
+  margin-top: 0 !important;
+  text-align: left; /* Align text to the left */
+  max-width: 800px; /* Limit width for better readability */
+  font-style: italic;
+}
+
+/* Optional: Add hover effect for links inside the paragraph */
+h2 + p a {
+  color: var(--slidev-theme-accent); /* Accent color for links */
+  text-decoration: none; /* Remove underline */
+  font-weight: 500; /* Slightly bold for emphasis */
+  transition: color 0.3s ease;
+}
+
+h2 + p a:hover {
+  color: var(--hover-color, #4A5568); /* Darker accent color on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Links */
+a {
+  color: var(--slidev-theme-accent); /* Blue for links */
+  text-decoration: none; /* Remove underline */
+  font-weight: 500; /* Slightly bold for emphasis */
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #005f99; /* Darker blue on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Images */
+img {
+  border-radius: 8px; /* Rounded corners for a modern look */
+}
+
+/* Styling for ordered and unordered lists */
+ol, ul {
+  margin: 1rem 0; /* Add spacing above and below the list */
+  padding-left: 2rem; /* Indent the list for better readability */
+  list-style-position: outside; /* Ensure bullets/numbers are outside the text */
+  font-size: 1.0rem; /* Adjust font size for better readability */
+  line-height: 1.8; /* Improve spacing between list items */
+  color: var(--text-color, #374151); /* Use main text color */
+}
+
+/* Styling for ordered lists (enumerations) */
+ol {
+  list-style-type: decimal; /* Use numbers for ordered lists */
+}
+
+/* Styling for unordered lists */
+ul {
+  list-style-type: disc; /* Use bullets for unordered lists */
+}
+
+/* Styling for list items */
+li {
+  margin-bottom: 0.5rem; /* Add spacing between list items */
+}
+
+/* Optional: Add hover effect for links inside list items */
+li a {
+  color: var(--slidev-theme-accent); /* Accent color for links */
+  text-decoration: none; /* Remove underline */
+  font-weight: 500; /* Slightly bold for emphasis */
+  transition: color 0.3s ease;
+}
+
+li a:hover {
+  color: var(--hover-color, #4A5568); /* Darker accent color on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+/* Default Layout */
+.slidev-layout.default {
+  padding-top: 70px; /* Add padding for content */
+  overflow-y: auto; /* Ensures scrollable content */
+  flex: 1; /* Ensures the content takes up remaining space in a flex container */
+}
+
+/* Cover Layout */
+.slidev-layout.cover {
+  background-image: var(--cover-background, none);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  padding: 2rem;
+
+  h1 {
+    font-size: 3rem; /* Larger font size for cover slide */
+    font-weight: 600; /* Extra bold for emphasis */
+    color: var(--slidev-theme-accent); /* Vibrant blue for tech feel */
+    margin-bottom: 0.5rem;
+  }
+
+  h1 + p {
+    font-size: 1.5rem; /* Subtitle size */
+    color: #4a5568; /* Neutral medium gray */
+    margin-top: 0.2rem; /* Adjust spacing */
+  }
+}
+
+/* Table of Contents */
+.toc ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.toc li {
+  margin-bottom: 0.5rem; /* Add spacing between items */
+}
+
+.toc a {
+  text-decoration: none; /* Remove underline */
+  color: var(--slidev-theme-accent); /* Use the accent color */
+  font-weight: bold; /* Make links bold */
+}
+
+.toc a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+

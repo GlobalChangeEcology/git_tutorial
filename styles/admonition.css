@@ -1,0 +1,66 @@
+/* Base Admonition Styles */
+.admonition {
+  padding: 8px 16px;
+  margin: 10px 0;
+  color: inherit;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: var(--custom-main-font);
+}
+
+.admonition p {
+  margin: 0;
+}
+
+.admonition > :first-child {
+  margin-top: 0;
+}
+
+.admonition > :last-child {
+  margin-bottom: 0;
+}
+
+/* Admonition Types */
+.admonition.important,
+.admonition-type.important {
+  background-color: #f3e5f5; /* Light purple */
+  border-left: 5px solid #9c27b0; /* Purple border */
+  color: #6a1b9a; /* Dark purple text */
+}
+
+.admonition.tip,
+.admonition-type.tip {
+  background-color: #e7f5e9; /* Light green */
+  border-left: 5px solid #4caf50; /* Green border */
+  color: #2e7d32; /* Dark green text */
+}
+
+.admonition.warning,
+.admonition-type.warning {
+  background-color: #fff4e5; /* Light orange */
+  border-left: 5px solid #ff9800; /* Orange border */
+  color: #e65100; /* Dark orange text */
+}
+
+.admonition.caution,
+.admonition-type.caution {
+  background-color: #fdecea; /* Light red */
+  border-left: 5px solid #f44336; /* Red border */
+  color: #b71c1c; /* Dark red text */
+}
+
+.admonition.info,
+.admonition-type.info {
+  background-color: #e3f2fd; /* Light blue */
+  border-left: 5px solid #2196f3; /* Blue border */
+  color: #0d47a1; /* Dark blue text */
+}
+
+/* Custom Admonition */
+.admonition.custom,
+.admonition-type.custom {
+  background-color: var(--custom-admon-bg-color);
+  color: var(--custom-admon-text-color);
+  border: 1px solid var(--custom-admon-border-color);
+  border-left: 6px solid var(--custom-admon-border-color);
+}

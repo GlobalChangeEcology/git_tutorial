@@ -1,157 +1,95 @@
 ---
-# You can also start simply with 'default'
-theme: ./theme
-background: ./images/cover.png
-title: Bytes, Bugs and Biology
-colorSchema: light
-mdc: true
+theme: ./
+favicon: './assets/favicon.ico'
+layout: cover
+coverBackground: './assets/cover.png'
+sectionBackground: './assets/section.png'
+themeConfig:
+  logo: './assets/logo.png'
+  author: 'Steven Hill'
+  avatar: './assets/avatar.png'
+  showProgressBar: true
 ---
 
-# Bytes, Bugs, Biology
+# Git for Beginners
 
- Keep Calm, Shift Happens 
-
-<div class="abs-br m-6 text-xl">
-  <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
-    <carbon:logo-github />
-  </a>
-</div>
+ Fearless coding and reproducible research
 
 ---
 transition: fade-out
 ---
 
-# About This Series
-** ** 
-**Content**
+## Table of Content
 
-This presentation is part of a new ongoing series where we explore technical and IT-related topics relevant to our work as researchers and scientists.
-
-**Key Features**
-
-
-- 📁 <span v-mark.circle.orange="1">Git, GitHub</span>
-- 💻 R & Python tips
-- 🗺️ GIS tools & geospatial workflows
-- 🛰️ Remote sensing
-- 📊 Data visualization & dashboards
-- ⚡ Improving code performance
-- … and more!
-
+<Toc minDepth="1" maxDepth="1" />
 
 ---
-transition: fade-out
+layout: section
+transition: fade-outs
 ---
 
-# Your Input is Key!
-
-** **
-
-I want these sessions to be practical, fun, and driven by what you find useful.
-
-
-- 💡 Got a topic in mind?
-- 🛠️ Curious about a tool or workflow?
-- ❓ Want to solve a problem you've run into?
-
-<br> </br>
-
-<v-click>
-
-I am also open to running extended sessions
-- 🕒 30–60 minutes
-- 💻 With hands-on tutorials, live demos, and
-- 👥 Time for you to try things out — with support.
-
-</v-click>
-
+# Why Git / GitHub?
 ---
-layout: intro
-transition: fade-out
----
-
-# Why Git and GitHub matter in modern research
-
----
-transition: fade-out
 layout: image-right
-image: './images/bigdata.png'
----
-
-### The Research Landscape is Evolving
-##
-
-We’re working with:
-
-- 📈 More data
-- 💻 More code
-- 👥 More collaborators
-
-<br> </br>
-<v-click>
-That means we need smarter ways to:
-
-- 🔄 Share our work
-- 🧪 Reproduce our analyses
-- 🤝 Collaborate across teams 
-</v-click>
-
-
-
----
-layout: two-cols-header
+image: "./assets/scratch_comic_small.png"
+backgroundSize: contain
+imageSize: 100%
 transition: fade-out
 ---
 
-# Common Problems
+## The Problem
 
-::left::
+Challenges Faced Without Version Control
 
 - "Where is this script we used in the last project?"
-
 - "Which version of the script is the right one?"
-
 - "I accidentally overwrote a file."
-
 - "Where's the latest data?"
-
 - "Who changed what, and why?"
 
-::right::
-
-<img
-  src="./images/scratch_comic_small.png"
-  class="center_image"
-/>
 ---
-layout: image
-image: './images/githeros_fun.png'
 transition: fade-out
 ---
 
+
+## Why use Git?
+
+Reproducibility, teamwork, and fearless coding
+
+1. <span v-click>🔁 Track Your Changes Over Time</span>
+2. <span v-click>🧑‍🤝‍🧑 Collaborate Smoothly with Others</span>
+3. <span v-click>💾 Backup Your Work Automatically (with GitHub)</span>
+4. <span v-click>🔬 Promote Reproducibility in Research</span>
+5. <span v-click>📢 Share Your Work with the World (if you want)</span>
+
+
 ---
-layout: two-cols-header
+layout: section
 transition: fade-out
 ---
 
-# What is git?
-##
+# What is Git and Github?
 
+---
+layout: two-cols
+transition: fade-out
+---
 
 ::left::
 
-<b>Git</b> is a version control system that tracks changes in your files over time.
+## What is Git?
 
-**Key Features**:
-- Keeps a history of file changes
-- Lets you save snapshots of your project
-- Allows you to work in branches 
-- Helps you merge changes 
-- Works locally — no internet required!
+A Distributed Version Control System
+
+Git is a **free and open-source tool** designed to help developers:
+
+- **Track changes** in their files over time.
+- **Collaborate** with others on the same project.
+- **Experiment** with new ideas without fear of losing progress.
 
 ::right::
 
-```mermaid {theme: 'base', scale: 0.8}
+```mermaid {theme: 'base', scale: 0.7}
 gitGraph TB:
     commit id: "version 0.0"
     commit id: "version 0.1"
@@ -170,139 +108,101 @@ gitGraph TB:
     checkout main
     merge Jane id: "version 0.4.2"
 ```
+---
+transition: fade-out
+---
 
+## What is Git?
+
+A Distributed Version Control System
+
+Key Features of Git
+
+1. **Version History**: Keep a detailed history of every change made to your files.
+2. **Branching**: Create separate branches to work on new features or fixes.
+3. **Merging**: Combine changes from different branches seamlessly.
+4. **Distributed**: Work offline—Git stores the entire repository locally.
+5. **Speed**: Perform operations like commits and branching quickly.
+
+---
+transition: fade-out
+---
+
+## Github
+
+A Platform for Collaboration and Hosting
+
+GitHub is a **web-based platform** built on top of Git. It provides tools for:
+
+- **Hosting repositories**: Store your code and project files in the cloud.
+- **Collaboration**: Work with others through pull requests, issues, and discussions.
+- **Version control**: Track changes and manage your project history.
+- **Automation**: Use GitHub Actions for CI/CD workflows.
+- **Publishing**: Host websites and documentation with GitHub Pages.
 
 
 ---
 transition: fade-out
 ---
 
-# Git vs GitHub – What’s the Difference?
-##
+## Git vs GitHub
 
-<br> </br>
-
-<div style="display: flex; justify-content: center;">
-  <table style="width: 70%; font-size: 0.8em;">
-    <thead>
-      <tr>
-        <th></th>
-        <th> 🔀  <strong>Git</strong></th>
-        <th> 🌐  <strong>GitHub</strong></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>What is it?</strong></td>
-        <td>A version control system</td>
-        <td>A platform for hosting Git repositories</td>
-      </tr>
-      <tr>
-        <td><strong>Runs where?</strong></td>
-        <td>On your local machine</td>
-        <td>In the cloud (online)</td>
-      </tr>
-      <tr>
-        <td><strong>Purpose</strong></td>
-        <td>Track changes in your files</td>
-        <td>Share and collaborate on Git projects</td>
-      </tr>
-      <tr>
-        <td><strong>Who uses it?</strong></td>
-        <td>Solo users with Git installed</td>
-        <td>Teams and the broader community</td>
-      </tr>
-      <tr>
-        <td><strong>Analogy</strong></td>
-        <td>Like saving a file with history</td>
-        <td>Like Google Drive for Git projects</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+Version control tool vs platform for collaboration
 
 
----
-layout: two-cols-header
-transition: fade-out
----
-
-# Open Science Foundations
-##
-
-<br> </br>
-
-- <b>Reproducibility</b> – track every change and restore previous versions.
-- <b>Collaboration</b> – work with others without overwriting each other’s work.
-- <b>Openness</b> – share your work with the world or your team.
-- <b>Transparency</b> – document your workflow and code.
-
-<br> </br>
-
-<img
-  src="./images/fair3.png"
-  class="center_image"
+<CustomTable
+  :headers="['', 'Git', 'GitHub']"
+  :rows="[
+    ['What is it?', 'A version control system', 'A platform for hosting Git repositories'],
+    ['Runs where?', 'On your local machine', 'In the cloud (online)'],
+    ['Purpose', 'Track changes in your files', 'Share and collaborate on Git projects'],
+    ['Who uses it?', 'Solo users with Git installed', 'Teams and the broader community'],
+    ['Analogy', 'Like saving a file with history', 'Like Google Drive for Git projects']
+  ]"
+  :striped="true"
+  :bordered="true"
+  fontSize="0.8rem"
+  headerBgColor="#f5f5f5"
+  headerTextColor="#000"
+  :rowColors="{ odd: '#fff', even: '#f9f9f9' }"
+  rowHoverColor="#e0e0e0"
 />
 
 
+
+
+
 ---
 transition: fade-out
 ---
 
-# Application in Ecology  
+## Application in Ecology  
 
-Practical ways github can accelerate research in ecology
+Practical ways GitHub powers open ecological research
 
-<div style="font-size: 0.6em; max-width: 70%; margin: auto;">
-
-<table>
-  <thead>
-    <tr style="font-size: 1em; font-weight: bold; background-color: #f0f0f0;">
-      <th style="padding: 8px;">Research Challenge</th>
-      <th style="padding: 8px;">How GitHub Helps</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-click>
-      <td>🧩 Ensuring reproducibility and citability</td>
-      <td>GitHub stores research compendia with code, data, and history. Zenodo adds DOIs for citation.</td>
-    </tr>
-    <tr v-click>
-      <td>🔄 Maintaining project continuity and structure</td>
-      <td>Version control tracks progress. GitHub Projects and Issues help coordinate distributed teams.</td>
-    </tr>
-    <tr v-click>
-      <td>👥 Collaborating across time zones and institutions</td>
-      <td>Pull requests enable asynchronous contributions. CI ensures reproducibility through automation.</td>
-    </tr>
-    <tr v-click>
-      <td>💬 Fostering open feedback and peer review</td>
-      <td>Issues and Discussions allow for transparent peer input, bug reports, and scientific debate.</td>
-    </tr>
-    <tr v-click>
-      <td>✍️ Writing and publishing research content</td>
-      <td>Collaborative manuscript writing in Markdown or LaTeX. GitHub Pages hosts websites or docs.</td>
-    </tr>
-    <tr v-click>
-      <td>🎓 Teaching and sharing educational materials</td>
-      <td>Share notebooks, tutorials, and data openly to support learning and reuse in training.</td>
-    </tr>
-  </tbody>
-</table>
-
-</div>
-
-
+<CustomTable :headers="['Research Challenge', 'How GitHub Helps']" :rows="[ ['Reproducibility', 'GitHub stores code, data, and history. Zenodo adds DOIs for citation.'], ['Project continuity', 'Version control tracks progress. GitHub Projects coordinate teams.'], ['Collaboration', 'Pull requests enable contributions. CI ensures reproducibility.'], ['Peer review', 'Issues and Discussions allow transparent feedback and debate.'], ['Publishing', 'Write in Markdown/LaTeX. GitHub Pages hosts websites or docs.'] ]" :striped="true" :bordered="true" fontSize="0.8rem" headerBgColor="#f5f5f5" headerTextColor="#000" :rowColors="{ odd: '#fff', even: '#f9f9f9' }" rowHoverColor="#e0e0e0" />
 
 ---
-layout: two-cols-header
+layout: section
 transition: fade-out
 ---
 
-## How it works
+# Git Basics
+
+---
+layout: two-cols
+transition: fade-out
+---
+
 
 ::left::
-<div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+
+### How it works
+
+A high-level look at Git's local-to-remote flow
+
+<div style="display: flex; height: 100%;">
+
 ```bash {all|1-2|1-3|1-4|1-7|1-8}
 
 # Local Computer
@@ -314,9 +214,12 @@ git checkout <branch>    # Switch branch
 git push origin main     # Upload local commits to remote
 git pull origin main     # Fetch and merge changes from remote 
 ```
+
 </div>
+
 ::right::
-<div style="display: flex; justify-content: center; align-items: center; margin-top: 1em; margin-bottom: 1em; transform: scale(0.95);">
+
+<div style="display: flex; justify-content: center; align-items: center; margin-top: -3em; margin-bottom: 1em; transform: scale(0.85);">
 
 ```mermaid
 flowchart TD
@@ -339,86 +242,260 @@ flowchart TD
 ```
   </div>
 
----
-transition: fade-out
----
-## More Essential Git Commands
 
-<br> </br>
-
-```bash {all|1-1|2-2|3-3|4-4|5-5|6-6|7-7|8-8|9-9|10-10|11-11|12-12|13-13|14-14|15-15}
-git status                  # Show status of working directory and staging area
-git diff                    # Show file changes not yet staged or committed
-git log --oneline           # Display concise commit history
-git branch                  # List all local branches
-git branch new-feature      # Create a new branch called 'new-feature'
-git switch new-feature      # Switch to the 'new-feature' branch
-git merge main              # Merge 'main' into the current branch
-git stash                   # Temporarily save uncommitted changes
-git stash pop               # Reapply last stashed changes and remove them from stash
-git revert <commit>         # Create a new commit that undoes the specified commit
-git reset --soft HEAD~1     # Undo last commit but keep changes staged
-git reset --hard HEAD~1     # Completely undo last commit and discard changes
-git clean -fd               # Remove untracked files and directories
-git tag v1.0                # Add a lightweight tag to current commit
-git remote -v               # Show remote URLs connected to your local repo
-  ```
 
 ---
 transition: fade-out
 ---
 
-#  Github Environment
-##
+## Core Concepts
+
+Learn the Git language: repo, commit, branch, and more
+
+<CustomTable
+  :headers="['Term', 'Meaning']"
+  :rows="[
+    ['📁 Repo', 'A project folder tracked by Git'],
+    ['💾 Commit', 'A saved snapshot of your project’s state'],
+    ['🌿 Branch', 'A parallel line of development'],
+    ['🔀 Merge', 'Combining changes from one branch into another'],
+    ['🌐 Remote', 'A version of your repo hosted on GitHub']
+  ]"
+  :striped="true"
+  :bordered="true"
+  fontSize="0.8rem"
+  headerBgColor="#f5f5f5"
+  headerTextColor="#000"
+  :rowColors="{ odd: '#fff', even: '#f9f9f9' }"
+  rowHoverColor="#e0e0e0"
+/>
+
+---
+transition: fade-out
+---
+
+## Git Workflow 
+
+Step-by-step to set up and save your work
+
+```bash
+# Step 1: Set your user info (only once)
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
+# Step 2: Initialize a new repo
+git init my-project
+cd my-project
+
+# Step 3: Create a file
+echo "Hello Git!" > readme.md
+
+# Step 4: Track the file
+git add readme.md
+
+# Step 5: Save a snapshot
+git commit -m "Initial commit"
+```
+
+
+---
+transition: fade-out
+---
+
+## Push to GitHub
+
+### Connect your local repo to the cloud
+
+```bash
+git remote add origin https://github.com/yourusername/your-repo.git # Add the remote (replace with your repo URL)
+git branch -M main. # Set the default branch
+git push -u origin main # Push your commits
+```
+<br></br>
+
+---
+transition: fade-out
+---
+
+## Branching & Merging
+
+### Parallel development made easy
+
+```bash
+# Create and switch to a new branch
+git checkout -b feature-idea
+
+# Work on your changes, then:
+git add .
+git commit -m "Add awesome feature"
+git push origin feature-idea
+```
+
+---
+transition: fade-out
+---
+
+## Branching & Merging
+
+### Parallel development made easy
+
+```bash
+# Create and switch to a new branch
+git checkout -b feature-idea
+
+# Work on your changes, then:
+git add .
+git commit -m "Add awesome feature"
+git push origin feature-idea
+```
+
+---
+layout: section
+transition: fade-out
+---
+
+# Advanced Git
+
+---
+transition: fade-out
+---
+
+## git stash
+
+### Save changes without committing
+
+```bash
+git stash             # temporarily saves uncommitted changes
+git stash list        # see all stashed changes
+git stash apply       # apply most recent stash
+git stash pop         # apply & remove stash
+git stash drop        # delete a stash
+```
+
+---
+transition: fade
+---
+
+##  git log
+
+### view the commit history of a repository 
+
+```bash
+git log --oneline --graph  ## add `--oneline` or `--graph` for visual clarity 
+git blame my_script.py.    ## see who edited each line of a file
+```
+
+
+---
+transition: fade
+---
+
+## git restore & reset
+
+### Don’t panic — how to fix Git mistakes
+
+```bash
+git restore --staged <file>   ## undo git add
+git reset --soft HEAD~1	      ## undo last commit (keep changes) 
+git reset --hard HEAD~1.      ## undo last commit (discard changes)
+git checkout HEAD -- <file>   ## restore deleted file
+
+```
+
+---
+layout: cover
+transition: fade-out
+---
+
+# Additional Tips
+
+---
+transition: fade-out
+---
+
+## Common Git Mistakes & Fixes
+
+### Oops-proofing your workflow with simple commands
 
 <div style="font-size: 0.8em; max-width: 100%; margin: auto;">
+<table style="width: 100%; border-collapse: collapse;">
+  <thead style="background-color: #f5f5f5;">
+    <tr>
+      <th style="padding: 10px; border: 1px solid #ccc;">Mistake</th>
+      <th style="padding: 10px; border: 1px solid #ccc;">Fix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #ccc;">Forgot to add a file</td>
+      <td style="padding: 10px; border: 1px solid #ccc;"><code>git add &lt;file&gt;</code> + <code>git commit</code></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #ccc;">Committed to the wrong branch</td>
+      <td style="padding: 10px; border: 1px solid #ccc;"><code>git switch correct-branch</code> + <code>git cherry-pick &lt;commit&gt;</code></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #ccc;">Merge conflict!</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Manually edit → <code>git add</code> + <code>git commit</code></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #ccc;">Deleted important changes</td>
+      <td style="padding: 10px; border: 1px solid #ccc;"><code>git log</code> → find commit → <code>git checkout &lt;commit&gt; &lt;file&gt;</code></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #ccc;">Pushed sensitive data</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Use <a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG</a> or <code>git filter-branch</code></td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
- <b>Developer GUIs & IDE Integrations</b>
--  [GitHub Desktop](https://desktop.github.com/) – Easy Git GUI by GitHub (great for beginners)
--  [GitKraken](https://www.gitkraken.com/) – Powerful cross-platform Git client with visual history
--  [VS Code Git Tools](https://code.visualstudio.com/docs/sourcecontrol/overview) – Built-in Git + extensions like GitLens
--  [RStudio Git Integration](https://support.posit.co/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN) – Git support built into RStudio
--  [JupyterLab Git Extension](https://github.com/jupyterlab/jupyterlab-git) – Integrate Git directly into Jupyter notebooks
+💡 Tip: Always check <code>git status</code> before committing!
 
- <b>Research, Data & Reproducibility Tools</b>
--  [Datalad](https://www.datalad.org) – Git-powered data management for scientific datasets
--  [Zenodo GitHub Integration](https://guides.github.com/activities/citable-code) – Archive your repo and get a DOI
--  [GitHub Codespaces](https://github.com/features/codespaces) – Cloud-based development environment with GitHub integration
-
- <b>Education & Collaboration</b>
--  [GitHub Classroom](https://classroom.github.com) – Manage assignments and student repos for teaching
-
-
-  </div>
 ---
 transition: fade-out
 ---
 
-#  Workshop Preview
+## GitHub Desktop & GUI Tools
 
- Agenda
+### Prefer clicking to typing? No worries!
 
-- Hands-on intro to Git
-- Pushing to GitHub
-- Collaborating via pull requests
-- Setting up your first reproducible project
-- Exploring GitHub Issues and project boards
-- Understanding branching & merge conflicts
-- Using Git/GitHub inside RStudio & Jupyter
-- Publishing your work with GitHub Pages or Zenodo
+- **GitHub Desktop** – beginner-friendly official GUI
+- **VS Code** – Git integration built-in 
+- **GitKraken** – sleek UI, lots of power
+- **Sourcetree** – from Atlassian, great for teams
+
+💡 Choose the tool that fits *your* workflow.
+
+---
+transition: fade-out
+---
+
+##  GitHub Etiquette Tips
+
+### Collaborate with kindness and clarity
+
+-  Write clear commit messages (what + why)
+-  Don’t commit broken code to `main`
+-  Use `.gitignore` to keep clutter out
+-  Clean up unused branches regularly
+-  Be kind and constructive in Pull Request comments
+-  Always write a description when opening a PR
+
+ "GitHub is not just a tool, it’s a shared workspace."
+
 
 ---
 layout: center
 transition: fade-out
 ---
 
-#  Thank you for your attention!
+# 🎉 You’re Ready to Git Going!
+##
 
-<div class="flex justify-center">
-  <img src="./images/data_trap.png" class="w-1/2 rounded shadow-lg" />
-  
-</div>
+“The best way to learn Git is to **use it regularly**"
 
-
-
+✅ Don’t be afraid to break things  
+✅ Ask questions, open issues  
+✅ Collaborate early and often
 

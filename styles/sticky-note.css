@@ -1,0 +1,54 @@
+/* Default Sticky Note Styles */
+.sticky-note {
+  width: var(--width);
+  height: var(--width);
+  background-color: var(--sticky-color, yellow);
+  text-align: var(--text-align, left);
+  max-width: 100%;
+  padding: 1em;
+  position: relative;
+  box-shadow: 5px 4px 6px rgba(0, 0, 0, 0.1);
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--text-color);
+  border: 0.4px solid var(--border-color);
+}
+
+.sticky-note strong {
+  display: block;
+  font-size: 0.8rem;
+  font-family: monospace;
+  letter-spacing: 0em;
+  word-spacing: -0.3em;
+}
+
+/* Color Schemes */
+.custom-yellow-light-scheme {
+  --custom-sticky-bg-color: #fef9c3;
+  --custom-sticky-text-color: #854d0e;
+  --custom-sticky-border-color: #facc15;
+}
+
+.custom-pink-light-scheme {
+  --custom-sticky-bg-color: #fce7f3;
+  --custom-sticky-text-color: #831843;
+  --custom-sticky-border-color: #ec4899;
+}
+
+.custom-blue-light-scheme {
+  --custom-sticky-bg-color: #bfdbfe;
+  --custom-sticky-text-color: #1e3a8a;
+  --custom-sticky-border-color: #3b82f6;
+}
+
+.custom-green-light-scheme {
+  --custom-sticky-bg-color: #d1fae5;
+  --custom-sticky-text-color: #065f46;
+  --custom-sticky-border-color: #10b981;
+}
+
+.custom-red-light-scheme {
+  --custom-sticky-bg-color: #fecaca;
+  --custom-sticky-text-color: #7f1d1d;
+  --custom-sticky-border-color: #ef4444;
+}

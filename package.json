@@ -1,18 +1,37 @@
 {
-  "name": "git_tutorial",
+  "name": "slidev-theme-slidev-gce-theme",
+  "version": "0.0.0",
   "type": "module",
-  "private": true,
+  "keywords": [
+    "slidev-theme",
+    "slidev"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
-    "build": "slidev build",
-    "dev": "slidev --open",
-    "export": "slidev export"
+    "build": "slidev build example.md",
+    "dev": "slidev example.md --open",
+    "export": "slidev export example.md",
+    "screenshot": "slidev export example.md --format png"
   },
   "dependencies": {
-    "@slidev/cli": "^51.3.0",
-    "@slidev/theme-apple-basic": "^0.25.1",
-    "@slidev/theme-default": "latest",
-    "slidev-theme-hep": "^0.1.1",
-    "slidev-theme-neversink": "^0.3.6",
-    "vue": "^3.5.13"
+    "@iconify/vue": "^4.3.0",
+    "@slidev/types": "^51.5.0",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^51.5.0",
+    "prettier": "^3.5.3"
+  },
+  "//": "Learn more: https://sli.dev/guide/write-theme.html",
+  "slidev": {
+    "colorSchema": "both",
+    "defaults": {
+      "fonts": {
+        "sans": "Nunito Sans",
+        "mono": "Fira Code"
+      }
+    }
   }
 }
