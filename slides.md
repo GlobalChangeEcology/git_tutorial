@@ -233,8 +233,8 @@ git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 
 # Step 2: Initialize a new repository
-git init my-project
-cd my-project
+git init my_first_project
+cd my_first_project
 ```
 
 ---
@@ -247,7 +247,7 @@ Track and save your work
 
 ```bash
 # Step 3: Create a file
-echo "Hello Git!" > README.md
+echo "Hello Git" > README.md
 
 # Step 4: Track the file
 git add README.md
@@ -259,28 +259,6 @@ git commit -m "Initial commit"
 
 <v-click> <StickyNote title="Pro Tip" color="green-light"  width='280px' :positionX="'60%'" :positionY="'55%'" :rotate="10"> Always write meaningful commit messages to describe what you’ve changed and why. </StickyNote> </v-click>
 
----
-transition: fade-out
----
-
-## Push to GitHub
-Connect your local repo to the cloud
-
-#### Step 1: Create a GitHub Account
-
-- If you don’t already have a GitHub account, [sign up here](https://github.com/signup).
-- Once signed in, create your repository.
-
-
-<v-click>
-
-#### Step 2: Connect your local repo to the cloud
-```bash
-git remote add origin https://github.com/yourusername/your-repo.git # Add the remote (replace with your repo URL)
-git branch -M main             # Set the default branch
-git push -u origin main        # Push your commits
-```
-</v-click>
 
 ---
 transition: fade-out
@@ -371,6 +349,29 @@ git log --oneline --graph  ## add `--oneline` or `--graph` for visual clarity
 git blame my_script.py.    ## see who edited each line of a file
 ```
 
+---
+transition: fade-out
+---
+
+## Push to GitHub
+Connect your local repo to the cloud
+
+#### Step 1: Create a GitHub Account
+
+- If you don’t already have a GitHub account, [sign up here](https://github.com/signup).
+- Once signed in, create your repository.
+
+
+<v-click>
+
+#### Step 2: Connect your local repo to the cloud
+```bash
+git remote add origin https://github.com/yourusername/your-repo.git # Add the remote (replace with your repo URL)
+git branch -M main             # Set the default branch
+git push -u origin main        # Push your commits
+```
+</v-click>
+
 
 ---
 layout: two-cols
@@ -438,4 +439,6 @@ layout: section
 transition: fade-out
 ---
 
-# Git Practice Lab
+
+
+

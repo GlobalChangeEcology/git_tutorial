@@ -1,1 +1,0 @@
-import{_ as t}from"./ProgressBar-fm30T6O4.js";import{f as s,o as r,j as a,e as n}from"./modules/vue-Cwmucd0j.js";import{u as _}from"./index-D10Ls5kv.js";const c={class:"slidev-layout default"},i={__name:"default",setup(l){return _(),(e,m)=>{const o=t;return r(),s("div",c,[a(e.$slots,"default"),n(o)])}}};export{i as _};
